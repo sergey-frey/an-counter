@@ -1,8 +1,8 @@
-interface IProps {
-  bonuses: number[];
-  onChange: (selectedBonuses: number[]) => void;
-}
+// interface IProps {
+//   bonuses: number[];
+//   onChange: (selectedBonuses: number[]) => void;
+// }
 
-export const DeadBonusesPanel = ({ bonuses, onChange }: IProps) => {
+export const DeadBonusesPanel = () => {
   return <></>;
 };
