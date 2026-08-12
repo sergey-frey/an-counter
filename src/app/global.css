@@ -5,10 +5,10 @@ body,
 #root {
     width: 100%;
     min-height: 100dvh;
+    overflow: hidden;
 }
 
 #root {
     display: flex;
     color: var(--color-neutral-200);
-    overflow: hidden;
 }

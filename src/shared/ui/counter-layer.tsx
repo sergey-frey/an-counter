@@ -1,4 +1,4 @@
-import { type ReactNode, useRef } from "react";
+import { type ReactNode, useCallback, useEffect, useRef } from "react";
 
 interface IProps {
   children: ReactNode;
@@ -27,7 +27,7 @@ export const CounterLayer = ({ children, onClick, onHold }: IProps) => {
     }, HOLDING_DURATION);
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = useCallback(() => {
     if (holdingIntervalRef.current === null) {
       return;
     }
@@ -40,14 +40,24 @@ export const CounterLayer = ({ children, onClick, onHold }: IProps) => {
     }
 
     onClick?.();
-  };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("pointerup", handlePointerUp);
+    window.addEventListener("touchend", handlePointerUp);
+
+    return () => {
+      window.removeEventListener("pointerup", handlePointerUp);
+      window.removeEventListener("touchend", handlePointerUp);
+    };
+  }, [handlePointerUp]);
 
   return (
     <button
       type="button"
       className="contents"
       onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
+      onTouchStart={handlePointerDown}
     >
       {children}
     </button>
