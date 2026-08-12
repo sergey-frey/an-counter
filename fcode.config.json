@@ -1,0 +1,4 @@
+{
+  "template_naming_style": "kebabcase",
+  "exclude": [".fcode", ".claude", "dist"]
+}

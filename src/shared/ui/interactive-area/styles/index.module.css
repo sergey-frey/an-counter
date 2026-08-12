@@ -1,0 +1,44 @@
+.interactive_area::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: var(--radius-xl);
+
+    background-color: var(--color-neutral-500);
+    opacity: 0;
+}
+
+.interactive_area.first_interaction::after {
+    animation-name: pulse;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+}
+
+.interactive_area.second_interaction::after {
+    animation-name: pulse2;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+}
+
+@keyframes pulse {
+    0% {
+        scale: 1;
+        opacity: 0.2;
+    }
+    100% {
+        scale: 1.2 1.05;
+        opacity: 0;
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        scale: 1;
+        opacity: 0.2;
+    }
+    100% {
+        scale: 1.2 1.05;
+        opacity: 0;
+    }
+}
