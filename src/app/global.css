@@ -17,3 +17,7 @@ body {
     display: flex;
     isolation: isolate;
 }
+
+* {
+    user-select: none;
+}
