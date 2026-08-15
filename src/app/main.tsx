@@ -5,6 +5,10 @@ import App from "./app.tsx";
 
 import "./global.css";
 
+window.oncontextmenu = () => {
+  return false;
+};
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />

@@ -11,6 +11,7 @@ body,
 body {
     position: relative;
     color: var(--color-neutral-200);
+    background-color: #111;
 }
 
 #root {

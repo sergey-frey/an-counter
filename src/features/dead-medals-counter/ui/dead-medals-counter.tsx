@@ -11,7 +11,13 @@ export const DeadMedalsCounter = ({ value }: IProps) => {
     <div className="flex text-green-600 select-none">
       <div className={cn("grid items-center gap-2")}>
         <div className={cn("flex items-center gap-1 text-2xl font-medium font-mono")}>
-          <img src={absolutePath("dead.svg")} width={30} height={30} alt="dead-wizard-medal-icon" />
+          <img
+            src={absolutePath("dead.svg")}
+            width={30}
+            height={30}
+            alt="dead-wizard-medal-icon"
+            className="pointer-events-none"
+          />
           {value}
         </div>
       </div>

@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <main className={cn("flex w-full min-h-full", "bg-[#111]")}>
+    <main className={cn("flex w-full min-h-full")}>
       <div className={cn("w-full max-w-100 min-h-full mx-auto", "grid grid-rows-[auto_1fr]")}>
         <section className="p-4 flex justify-between items-center">
           <QrModal>
