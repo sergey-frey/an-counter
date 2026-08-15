@@ -1,4 +1,3 @@
-import { Button } from "@base-ui/react";
 import { QrCodeIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 
