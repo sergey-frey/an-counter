@@ -1,3 +1,5 @@
+import { Button } from "@base-ui/react";
+import { QrCodeIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 
 import { DeadMedalsCounter } from "@/features/dead-medals-counter";
@@ -5,6 +7,7 @@ import { HpCounter } from "@/features/hp-counter";
 import { CounterLayer } from "@/shared/ui/counter-layer";
 import { InteractiveArea } from "@/shared/ui/interactive-area";
 import { cn } from "@/shared/utils/cn";
+import { QrModal } from "@/widgets/qr-modal";
 
 function App() {
   const [hpCounter, setHpCounter] = useState(20);
@@ -29,7 +32,11 @@ function App() {
   return (
     <main className={cn("flex w-full min-h-full", "bg-[#111]")}>
       <div className={cn("w-full max-w-100 min-h-full mx-auto", "grid grid-rows-[auto_1fr]")}>
-        <section className="p-4 flex justify-end">
+        <section className="p-4 flex justify-between items-center">
+          <QrModal>
+            <QrCodeIcon className="size-7" />
+          </QrModal>
+
           <CounterLayer
             onClick={() => setDeadMedalsCounter((prev) => prev + 1)}
             onHold={() => setDeadMedalsCounter((prev) => Math.max(0, prev - 1))}

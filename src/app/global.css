@@ -8,7 +8,12 @@ body,
     overflow: hidden;
 }
 
+body {
+    position: relative;
+    color: var(--color-neutral-200);
+}
+
 #root {
     display: flex;
-    color: var(--color-neutral-200);
+    isolation: isolate;
 }
