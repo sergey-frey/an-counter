@@ -47,19 +47,19 @@ function App() {
         <section className="p-4 pt-50 w-full relative">
           <div className={cn("absolute inset-2", "grid grid-cols-2 gap-2")}>
             <CounterLayer
-              onClick={() => incrementHpCounterBy(1)}
-              onHold={() => incrementHpCounterBy(10)}
-            >
-              {/*<div />*/}
-              <InteractiveArea dependencies={[incrementHoldsCounter]} />
-            </CounterLayer>
-
-            <CounterLayer
               onClick={() => decrementHpCounterBy(1)}
               onHold={() => decrementHpCounterBy(10)}
             >
               {/*<div />*/}
               <InteractiveArea dependencies={[decrementHoldsCounter]} />
+            </CounterLayer>
+
+            <CounterLayer
+              onClick={() => incrementHpCounterBy(1)}
+              onHold={() => incrementHpCounterBy(10)}
+            >
+              {/*<div />*/}
+              <InteractiveArea dependencies={[incrementHoldsCounter]} />
             </CounterLayer>
           </div>
           <HpCounter value={hpCounter} />
